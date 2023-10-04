@@ -8,9 +8,13 @@ favicon: /-/apneduniya.github.io/fastn-form/favicon.ico
 -- fastn.dependency: fastn-community.github.io/roboto-typography
 -- fastn.dependency: fastn-community.github.io/dark-flame-cs
 
+-- fastn.dependency: apneduniya.github.io/fastn-quicksand-font
+
 -- fastn.auto-import: apneduniya.github.io/fastn-form/FASTN/ds
 -- fastn.auto-import: apneduniya.github.io/fastn-form/assets
 -- fastn.auto-import: doc-site
+
+-- fastn.auto-import: apneduniya.github.io/fastn-quicksand-font
 
 -- fastn.sitemap:
 
