@@ -1,0 +1,367 @@
+
+
+
+-- ftd.shadow text-input-shadow: 
+color: rgba(0,0,0,0.1)
+x-offset.px: 0
+y-offset.px: 4
+blur.px: 12
+
+
+
+
+
+-- component wrapper:
+string title:
+string description:
+string button-name:
+string button-link:
+string short-description:
+string $name:
+string $email:
+string $address:  
+string $message:
+boolean $on-click:
+ftd.type-data types: $fastn-quicksand-font.types
+
+;; Children Wrapper
+-- ftd.row:
+height: fill-container
+width: fill-container
+
+-- ftd.desktop:
+
+;;  M A I N  P A G E
+-- ftd.row:
+background.solid: white
+padding.px: 20
+height: fill-container
+width: fill-container
+
+;; Form column
+-- ftd.column:
+height: fill-container
+width.fixed.percent: 50
+padding.px: 20
+;; spacing: space-between
+
+;; Title (Heading)`
+-- ftd.text: $wrapper.title
+role: $inherited.types.heading-medium
+align-self: start
+
+;; Description Column
+-- ftd.column:
+margin-top.calc: 100% - (50% + 40px + 40px)
+
+;; Description (Small Heading)
+-- ftd.text: $wrapper.description
+role: $inherited.types.heading-small
+style: bold
+
+;; Short Description (Paragraph)
+-- ftd.text: $wrapper.short-description
+role: $inherited.types.copy-regular
+
+;; Button
+-- ftd.column:
+margin-top.px: 20
+background.solid: #0D6EFD
+height.fixed.px: 40
+padding-horizontal.px: 16
+padding-vertical.px: 8
+width: fill-container
+max-width.fixed.px: 300
+shadow: $text-input-shadow
+border-radius.px: 6
+align-content: center
+cursor: pointer
+link: $wrapper.button-link
+open-in-new-tab: true 
+
+-- ftd.text: $wrapper.button-name
+color: white
+role: $inherited.types.source-code
+
+-- end: ftd.column
+;; END OF DOWNLOAD NOW BUTTON
+
+-- end: ftd.column
+;; END OF DESCRIPTION COLUMN
+
+-- end: ftd.column
+;; END OF FORM COLUMN
+
+;; Right side column
+-- ftd.column:
+id: right-side
+height: fill-container
+width.fixed.percent: 50
+
+
+;; Right side Image
+-- ftd.image:
+src: $assets.files.assets.right.png
+border-radius.px: 20
+height: fill-container
+;; width.fixed.percent: 50
+width: fill-container
+
+;; Form
+-- ftd.column:
+width: fill-container
+anchor.id: right-side
+bottom.px: 0
+left.px: 0
+z-index: 1
+align-content: center
+
+
+;; Name
+-- ftd.text-input:
+margin-bottom.px: 20
+placeholder: Name
+padding-horizontal.px: 16
+padding-vertical.px: 8
+height.fixed.px: 40
+width: fill-container
+max-width.fixed.px: 500
+shadow: $text-input-shadow
+border-radius.px: 6
+$on-input$: $ftd.set-string($a = $wrapper.name, v = $VALUE)
+role: $inherited.types.source-code
+
+;; Email
+-- ftd.text-input:
+margin-bottom.px: 20
+placeholder: Email
+type: email
+padding-horizontal.px: 16
+padding-vertical.px: 8
+height.fixed.px: 40
+width: fill-container
+max-width.fixed.px: 500
+shadow: $text-input-shadow
+border-radius.px: 6
+$on-input$: $ftd.set-string($a = $wrapper.email, v = $VALUE)
+role: $inherited.types.source-code
+
+;; Address
+-- ftd.text-input:
+margin-bottom.px: 20
+placeholder: Address
+padding-horizontal.px: 16
+padding-vertical.px: 8
+height.fixed.px: 40
+width: fill-container
+max-width.fixed.px: 500
+shadow: $text-input-shadow
+border-radius.px: 6
+$on-input$: $ftd.set-string($a = $wrapper.address, v = $VALUE)
+role: $inherited.types.source-code
+
+;; Message
+-- ftd.text-input:
+margin-bottom.px: 20
+placeholder: Message
+multiline: true
+padding-horizontal.px: 16
+padding-vertical.px: 8
+height.fixed.px: 100
+width: fill-container
+max-width.fixed.px: 500
+shadow: $text-input-shadow
+border-radius.px: 6
+$on-input$: $ftd.set-string($a = $wrapper.message, v = $VALUE)
+role: $inherited.types.source-code
+
+;; Button
+-- ftd.column:
+margin-bottom.px: 20
+background.solid: #0D6EFD
+height.fixed.px: 40
+padding-horizontal.px: 16
+padding-vertical.px: 8
+width: fill-container
+max-width.fixed.px: 500
+shadow: $text-input-shadow
+border-radius.px: 6
+align-content: center
+cursor: pointer
+$on-click$: $ftd.toggle($a = $wrapper.on-click)
+
+-- ftd.text: Submit
+color: white
+role: $inherited.types.source-code
+
+-- end: ftd.column
+;; END OF BUTTON
+
+
+-- end: ftd.column
+;; END OF FORM
+
+-- end: ftd.column
+;; END OF RIGHT SIDE COLUMN
+
+-- end: ftd.row
+;; E N D  O F  M A I N  P A G E
+
+-- end: ftd.desktop
+
+-- ftd.mobile:
+
+;;  M A I N  P A G E
+-- ftd.column:
+background.solid: white
+padding.px: 20
+height: fill-container
+width: fill-container
+
+;; Title (Heading)`
+-- ftd.text: $wrapper.title
+role: $inherited.types.heading-medium
+align-self: start
+text-align: center
+width: fill-container
+
+;; Description Column
+-- ftd.column:
+margin-top.px: 40
+
+;; Description (Small Heading)
+-- ftd.text: $wrapper.description
+role: $inherited.types.heading-small
+style: bold
+
+;; Short Description (Paragraph)
+-- ftd.text: $wrapper.short-description
+role: $inherited.types.copy-regular
+
+;; Button
+-- ftd.column:
+margin-top.px: 20
+background.solid: #0D6EFD
+height.fixed.px: 40
+padding-horizontal.px: 16
+padding-vertical.px: 8
+width: fill-container
+max-width.fixed.px: 300
+shadow: $text-input-shadow
+border-radius.px: 6
+align-content: center
+cursor: pointer
+link: $wrapper.button-link
+open-in-new-tab: true
+
+-- ftd.text: $wrapper.button-name
+color: white
+role: $inherited.types.source-code
+
+-- end: ftd.column
+;; END OF DOWNLOAD NOW BUTTON
+
+-- end: ftd.column
+;; END OF DESCRIPTION COLUMN
+
+;; Form
+-- ftd.column:
+margin-top.px: 60
+width: fill-container
+align-content: center
+
+
+;; Name
+-- ftd.text-input:
+margin-bottom.px: 20
+placeholder: Name
+padding-horizontal.px: 16
+padding-vertical.px: 8
+height.fixed.px: 40
+width: fill-container
+max-width.fixed.px: 400
+shadow: $text-input-shadow
+border-radius.px: 6
+$on-input$: $ftd.set-string($a = $wrapper.name, v = $VALUE)
+role: $inherited.types.source-code
+
+;; Email
+-- ftd.text-input:
+margin-bottom.px: 20
+placeholder: Email
+type: email
+padding-horizontal.px: 16
+padding-vertical.px: 8
+height.fixed.px: 40
+width: fill-container
+max-width.fixed.px: 400
+shadow: $text-input-shadow
+border-radius.px: 6
+$on-input$: $ftd.set-string($a = $wrapper.email, v = $VALUE)
+role: $inherited.types.source-code
+
+;; Address
+-- ftd.text-input:
+margin-bottom.px: 20
+placeholder: Address
+padding-horizontal.px: 16
+padding-vertical.px: 8
+height.fixed.px: 40
+width: fill-container
+max-width.fixed.px: 400
+shadow: $text-input-shadow
+border-radius.px: 6
+$on-input$: $ftd.set-string($a = $wrapper.address, v = $VALUE)
+role: $inherited.types.source-code
+
+;; Message
+-- ftd.text-input:
+margin-bottom.px: 20
+placeholder: Message
+multiline: true
+padding-horizontal.px: 16
+padding-vertical.px: 8
+height.fixed.px: 100
+width: fill-container
+max-width.fixed.px: 400
+shadow: $text-input-shadow
+border-radius.px: 6
+$on-input$: $ftd.set-string($a = $wrapper.message, v = $VALUE)
+role: $inherited.types.source-code
+
+;; Button
+-- ftd.column:
+margin-bottom.px: 20
+background.solid: #0D6EFD
+height.fixed.px: 40
+padding-horizontal.px: 16
+padding-vertical.px: 8
+width: fill-container
+max-width.fixed.px: 400
+shadow: $text-input-shadow
+border-radius.px: 6
+align-content: center
+cursor: pointer
+$on-click$: $ftd.toggle($a = $wrapper.on-click)
+
+-- ftd.text: Submit
+color: white
+role: $inherited.types.source-code
+
+-- end: ftd.column
+;; END OF BUTTON
+
+
+-- end: ftd.column
+;; END OF FORM
+
+-- end: ftd.column
+;; E N D  O F  M A I N  P A G E
+
+-- end: ftd.mobile
+
+-- end: ftd.row
+;; E N D  O F  C H I L D R E N  W R A P P E R
+
+-- end: wrapper
+
